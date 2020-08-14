@@ -1,0 +1,607 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{-webkit-appearance:none;-moz-appearance:none;appearance:none;background-color:transparent;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear;-webkit-tap-highlight-color:transparent}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTBMMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMzIgOTBsNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJhIiB4PSIxMCIgeT0iMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgcng9IjUuNjciLz48cGF0aCBjbGFzcz0iYSIgZD0iTTQwIDcwSDIwVjUwbTIwIDBMMjAgNzBtNDAtNDBoMjB2MjBtLTIwIDBsMjAtMjAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJhIiB4PSIxMCIgeT0iMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgcng9IjUuNjciLz48cGF0aCBjbGFzcz0iYSIgZD0iTTIwIDUwaDIwdjIwbS0yMCAwbDIwLTIwbTQwIDBINjBWMzBtMjAgMEw2MCA1MCIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS13aWR0aDo1cHh9PC9zdHlsZT48L2RlZnM+PHBhdGggY2xhc3M9ImEiIGQ9Ik0yMCA2MGgtNWE1IDUgMCAwMS01LTVWMjBhNSA1IDAgMDE1LTVoNjBhNSA1IDAgMDE1IDV2NU0zMCA4NWg2MCIvPjxyZWN0IHg9IjMwIiB5PSIzNSIgd2lkdGg9IjYwIiBoZWlnaHQ9IjQwIiByeD0iNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIi8+PHJlY3QgY2xhc3M9ImEiIHg9IjMwIiB5PSIzNSIgd2lkdGg9IjYwIiBoZWlnaHQ9IjQwIiByeD0iNSIvPjxwYXRoIGNsYXNzPSJhIiBkPSJNNDAgNTBoNDBNNDAgNjBoMzAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide.bespoke-marp-active{opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{-webkit-animation-name:__bespoke_marp__!important;animation-name:__bespoke_marp__!important}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{bottom:0;left:0;position:absolute;right:0;top:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{background:rgba(0,0,0,.65);border-radius:7px;bottom:50px;color:#fff;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;white-space:nowrap;z-index:1;will-change:transform}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{flex:0 0 0;background:#0288d1;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:transparent}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{font-family:Helvetica,Arial,sans-serif;height:100%;left:0;position:absolute;top:0;width:100%;display:grid;grid-template-columns:2fr 1fr;grid-template-rows:minmax(140px,1fr) 2fr 3em;grid-template-areas:"current next" "current note" "info    note"}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;position:relative;overflow:hidden}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;position:absolute;pointer-events:none;top:20px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{-webkit-filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:transparent;border:0;display:block;-webkit-filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;position:absolute;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;top:20px;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{margin:20px;width:calc(100% - 40px);height:calc(100% - 40px);box-sizing:border-box;font-size:1.1em;overflow:auto;padding-right:3px;white-space:pre-wrap;word-wrap:break-word;scrollbar-width:thin;scrollbar-color:hsla(0,0%,93.3%,.5) transparent}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:transparent}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:hsla(0,0%,93.3%,.5);border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{display:block;box-sizing:border-box;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>div#p>svg>foreignObject>section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center}div#p>svg>foreignObject>section:after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#p>svg>foreignObject>section:not([data-marpit-pagination]):after{display:none}/* Normalization */div#p>svg>foreignObject>section h1{font-size:2em;margin:0.67em 0}div#p>svg>foreignObject>section video::-webkit-media-controls{will-change:transform}@page{size:1280px 720px;margin:0}@media print{body,html{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#p>svg>foreignObject>section{page-break-before:always;break-before:page}div#p>svg>foreignObject>section,div#p>svg>foreignObject>section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;transition:none!important}div#p>svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#p>svg>foreignObject>section svg[data-marp-fitting=svg]{display:block;height:auto;width:100%}@supports (-ms-ime-align:auto){div#p>svg>foreignObject>section svg[data-marp-fitting=svg]{position:static}}div#p>svg>foreignObject>section svg[data-marp-fitting=svg].__reflow__{content:""}@supports (-ms-ime-align:auto){div#p>svg>foreignObject>section svg[data-marp-fitting=svg].__reflow__{position:relative}}div#p>svg>foreignObject>section [data-marp-fitting-svg-content]{display:table;white-space:nowrap}div#p>svg>foreignObject>section [data-marp-fitting-svg-content-wrap]{white-space:pre}div#p>svg>foreignObject>section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}
+/*!
+ * Marp default theme.
+ *
+ * @theme default
+ * @author Yuki Hattori
+ *
+ * @auto-scaling true
+ * @size 4:3 960px 720px
+ */div#p>svg>foreignObject>section .octicon{display:inline-block;fill:currentColor;vertical-align:text-bottom}div#p>svg>foreignObject>section .anchor{float:left;line-height:1;margin-left:-20px;padding-right:4px}div#p>svg>foreignObject>section .anchor:focus{outline:none}div#p>svg>foreignObject>section h1 .octicon-link,div#p>svg>foreignObject>section h2 .octicon-link,div#p>svg>foreignObject>section h3 .octicon-link,div#p>svg>foreignObject>section h4 .octicon-link,div#p>svg>foreignObject>section h5 .octicon-link,div#p>svg>foreignObject>section h6 .octicon-link{color:#1b1f23;vertical-align:middle;visibility:hidden}div#p>svg>foreignObject>section h1:hover .anchor,div#p>svg>foreignObject>section h2:hover .anchor,div#p>svg>foreignObject>section h3:hover .anchor,div#p>svg>foreignObject>section h4:hover .anchor,div#p>svg>foreignObject>section h5:hover .anchor,div#p>svg>foreignObject>section h6:hover .anchor{text-decoration:none}div#p>svg>foreignObject>section h1:hover .anchor .octicon-link,div#p>svg>foreignObject>section h2:hover .anchor .octicon-link,div#p>svg>foreignObject>section h3:hover .anchor .octicon-link,div#p>svg>foreignObject>section h4:hover .anchor .octicon-link,div#p>svg>foreignObject>section h5:hover .anchor .octicon-link,div#p>svg>foreignObject>section h6:hover .anchor .octicon-link{visibility:visible}div#p>svg>foreignObject>section h1:hover .anchor .octicon-link:before,div#p>svg>foreignObject>section h2:hover .anchor .octicon-link:before,div#p>svg>foreignObject>section h3:hover .anchor .octicon-link:before,div#p>svg>foreignObject>section h4:hover .anchor .octicon-link:before,div#p>svg>foreignObject>section h5:hover .anchor .octicon-link:before,div#p>svg>foreignObject>section h6:hover .anchor .octicon-link:before{width:16px;height:16px;content:" ";display:inline-block;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' aria-hidden='true'%3E%3Cpath fill-rule='evenodd' d='M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z'/%3E%3C/svg%3E")}div#p>svg>foreignObject>section{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#24292e;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:16px;line-height:1.5;word-wrap:break-word}div#p>svg>foreignObject>section{--marpit-root-font-size:16px}div#p>svg>foreignObject>section details{display:block}div#p>svg>foreignObject>section summary{display:list-item}div#p>svg>foreignObject>section a{background-color:initial}div#p>svg>foreignObject>section a:active,div#p>svg>foreignObject>section a:hover{outline-width:0}div#p>svg>foreignObject>section strong{font-weight:inherit;font-weight:bolder}div#p>svg>foreignObject>section h1{margin:.67em 0}div#p>svg>foreignObject>section img{border-style:none}div#p>svg>foreignObject>section code,div#p>svg>foreignObject>section kbd,div#p>svg>foreignObject>section pre{font-family:monospace,monospace;font-size:1em}div#p>svg>foreignObject>section hr{box-sizing:initial;overflow:visible}div#p>svg>foreignObject>section input{font:inherit;margin:0;overflow:visible}div#p>svg>foreignObject>section [type=checkbox]{padding:0}div#p>svg>foreignObject>section *,div#p>svg>foreignObject>section [type=checkbox]{box-sizing:border-box}div#p>svg>foreignObject>section input{font-family:inherit;font-size:inherit;line-height:inherit}div#p>svg>foreignObject>section a{color:#0366d6;text-decoration:none}div#p>svg>foreignObject>section a:hover{text-decoration:underline}div#p>svg>foreignObject>section strong{font-weight:600}div#p>svg>foreignObject>section hr{height:0;margin:15px 0;overflow:hidden;background:transparent;border-bottom:1px solid #dfe2e5}div#p>svg>foreignObject>section hr:after,div#p>svg>foreignObject>section hr:before{display:table;content:""}div#p>svg>foreignObject>section hr:after{clear:both}div#p>svg>foreignObject>section table{border-spacing:0;border-collapse:collapse}div#p>svg>foreignObject>section td,div#p>svg>foreignObject>section th{padding:0}div#p>svg>foreignObject>section details summary{cursor:pointer}div#p>svg>foreignObject>section h1,div#p>svg>foreignObject>section h2,div#p>svg>foreignObject>section h3,div#p>svg>foreignObject>section h4,div#p>svg>foreignObject>section h5,div#p>svg>foreignObject>section h6{margin-top:0;margin-bottom:0}div#p>svg>foreignObject>section h1{font-size:32px}div#p>svg>foreignObject>section h1,div#p>svg>foreignObject>section h2{font-weight:600}div#p>svg>foreignObject>section h2{font-size:24px}div#p>svg>foreignObject>section h3{font-size:20px}div#p>svg>foreignObject>section h3,div#p>svg>foreignObject>section h4{font-weight:600}div#p>svg>foreignObject>section h4{font-size:16px}div#p>svg>foreignObject>section h5{font-size:14px}div#p>svg>foreignObject>section h5,div#p>svg>foreignObject>section h6{font-weight:600}div#p>svg>foreignObject>section h6{font-size:12px}div#p>svg>foreignObject>section p{margin-top:0;margin-bottom:10px}div#p>svg>foreignObject>section blockquote{margin:0}div#p>svg>foreignObject>section ol,div#p>svg>foreignObject>section ul{padding-left:0;margin-top:0;margin-bottom:0}div#p>svg>foreignObject>section ol ol,div#p>svg>foreignObject>section ul ol{list-style-type:lower-roman}div#p>svg>foreignObject>section ol ol ol,div#p>svg>foreignObject>section ol ul ol,div#p>svg>foreignObject>section ul ol ol,div#p>svg>foreignObject>section ul ul ol{list-style-type:lower-alpha}div#p>svg>foreignObject>section dd{margin-left:0}div#p>svg>foreignObject>section code,div#p>svg>foreignObject>section pre{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:12px}div#p>svg>foreignObject>section pre{margin-top:0;margin-bottom:0}div#p>svg>foreignObject>section input::-webkit-inner-spin-button,div#p>svg>foreignObject>section input::-webkit-outer-spin-button{margin:0;-webkit-appearance:none;appearance:none}div#p>svg>foreignObject>section :checked+.radio-label{position:relative;z-index:1;border-color:#0366d6}div#p>svg>foreignObject>section .border{border:1px solid #e1e4e8!important}div#p>svg>foreignObject>section .border-0{border:0!important}div#p>svg>foreignObject>section .border-bottom{border-bottom:1px solid #e1e4e8!important}div#p>svg>foreignObject>section .rounded-1{border-radius:3px!important}div#p>svg>foreignObject>section .bg-white{background-color:#fff!important}div#p>svg>foreignObject>section .bg-gray-light{background-color:#fafbfc!important}div#p>svg>foreignObject>section .text-gray-light{color:#6a737d!important}div#p>svg>foreignObject>section .pl-3,div#p>svg>foreignObject>section .px-3{padding-left:16px!important}div#p>svg>foreignObject>section .px-3{padding-right:16px!important}div#p>svg>foreignObject>section .f6{font-size:12px!important}div#p>svg>foreignObject>section div#p>svg>foreignObject>section section.f6{--marpit-root-font-size:12px!important}div#p>svg>foreignObject>section .lh-condensed{line-height:1.25!important}div#p>svg>foreignObject>section .text-bold{font-weight:600!important}div#p>svg>foreignObject>section .pl-c{color:#6a737d}div#p>svg>foreignObject>section .pl-c1,div#p>svg>foreignObject>section .pl-s .pl-v{color:#005cc5}div#p>svg>foreignObject>section .pl-e,div#p>svg>foreignObject>section .pl-en{color:#6f42c1}div#p>svg>foreignObject>section .pl-s .pl-s1,div#p>svg>foreignObject>section .pl-smi{color:#24292e}div#p>svg>foreignObject>section .pl-ent{color:#22863a}div#p>svg>foreignObject>section .pl-k{color:#d73a49}div#p>svg>foreignObject>section .pl-pds,div#p>svg>foreignObject>section .pl-s,div#p>svg>foreignObject>section .pl-s .pl-pse .pl-s1,div#p>svg>foreignObject>section .pl-sr,div#p>svg>foreignObject>section .pl-sr .pl-cce,div#p>svg>foreignObject>section .pl-sr .pl-sra,div#p>svg>foreignObject>section .pl-sr .pl-sre{color:#032f62}div#p>svg>foreignObject>section .pl-smw,div#p>svg>foreignObject>section .pl-v{color:#e36209}div#p>svg>foreignObject>section .pl-bu{color:#b31d28}div#p>svg>foreignObject>section .pl-ii{color:#fafbfc;background-color:#b31d28}div#p>svg>foreignObject>section .pl-c2{color:#fafbfc;background-color:#d73a49}div#p>svg>foreignObject>section .pl-c2:before{content:"^M"}div#p>svg>foreignObject>section .pl-sr .pl-cce{font-weight:700;color:#22863a}div#p>svg>foreignObject>section .pl-ml{color:#735c0f}div#p>svg>foreignObject>section .pl-mh,div#p>svg>foreignObject>section .pl-mh .pl-en,div#p>svg>foreignObject>section .pl-ms{font-weight:700;color:#005cc5}div#p>svg>foreignObject>section .pl-mi{font-style:italic;color:#24292e}div#p>svg>foreignObject>section .pl-mb{font-weight:700;color:#24292e}div#p>svg>foreignObject>section .pl-md{color:#b31d28;background-color:#ffeef0}div#p>svg>foreignObject>section .pl-mi1{color:#22863a;background-color:#f0fff4}div#p>svg>foreignObject>section .pl-mc{color:#e36209;background-color:#ffebda}div#p>svg>foreignObject>section .pl-mi2{color:#f6f8fa;background-color:#005cc5}div#p>svg>foreignObject>section .pl-mdr{font-weight:700;color:#6f42c1}div#p>svg>foreignObject>section .pl-ba{color:#586069}div#p>svg>foreignObject>section .pl-sg{color:#959da5}div#p>svg>foreignObject>section .pl-corl{text-decoration:underline;color:#032f62}div#p>svg>foreignObject>section .mb-0{margin-bottom:0!important}div#p>svg>foreignObject>section .my-2{margin-bottom:8px!important;margin-top:8px!important}div#p>svg>foreignObject>section .pl-0{padding-left:0!important}div#p>svg>foreignObject>section .py-0{padding-top:0!important;padding-bottom:0!important}div#p>svg>foreignObject>section .pl-1{padding-left:4px!important}div#p>svg>foreignObject>section .pl-2{padding-left:8px!important}div#p>svg>foreignObject>section .py-2{padding-top:8px!important;padding-bottom:8px!important}div#p>svg>foreignObject>section .pl-3{padding-left:16px!important}div#p>svg>foreignObject>section .pl-4{padding-left:24px!important}div#p>svg>foreignObject>section .pl-5{padding-left:32px!important}div#p>svg>foreignObject>section .pl-6{padding-left:40px!important}div#p>svg>foreignObject>section .pl-7{padding-left:48px!important}div#p>svg>foreignObject>section .pl-8{padding-left:64px!important}div#p>svg>foreignObject>section .pl-9{padding-left:80px!important}div#p>svg>foreignObject>section .pl-10{padding-left:96px!important}div#p>svg>foreignObject>section .pl-11{padding-left:112px!important}div#p>svg>foreignObject>section .pl-12{padding-left:128px!important}div#p>svg>foreignObject>section hr{border-bottom-color:#eee}div#p>svg>foreignObject>section kbd{display:inline-block;padding:3px 5px;font:11px SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;line-height:10px;color:#444d56;vertical-align:middle;background-color:#fafbfc;border:1px solid #d1d5da;border-radius:3px;box-shadow:inset 0 -1px 0 #d1d5da}div#p>svg>foreignObject>section:after,div#p>svg>foreignObject>section:before{display:table
+  /* content:""; */}div#p>svg>foreignObject>section:after{clear:both}div#p>svg>foreignObject>section>:first-child{margin-top:0!important}div#p>svg>foreignObject>section>:last-child{margin-bottom:0!important}div#p>svg>foreignObject>section a:not([href]){color:inherit;text-decoration:none}div#p>svg>foreignObject>section blockquote,div#p>svg>foreignObject>section details,div#p>svg>foreignObject>section dl,div#p>svg>foreignObject>section ol,div#p>svg>foreignObject>section p,div#p>svg>foreignObject>section pre,div#p>svg>foreignObject>section table,div#p>svg>foreignObject>section ul{margin-top:0;margin-bottom:16px}div#p>svg>foreignObject>section hr{height:.25em;padding:0;margin:24px 0;background-color:#e1e4e8;border:0}div#p>svg>foreignObject>section blockquote{padding:0 1em;color:#6a737d;border-left:.25em solid #dfe2e5}div#p>svg>foreignObject>section blockquote>:first-child{margin-top:0}div#p>svg>foreignObject>section blockquote>:last-child{margin-bottom:0}div#p>svg>foreignObject>section h1,div#p>svg>foreignObject>section h2,div#p>svg>foreignObject>section h3,div#p>svg>foreignObject>section h4,div#p>svg>foreignObject>section h5,div#p>svg>foreignObject>section h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}div#p>svg>foreignObject>section h1{font-size:2em}div#p>svg>foreignObject>section h1,div#p>svg>foreignObject>section h2{padding-bottom:.3em;border-bottom:1px solid #eaecef}div#p>svg>foreignObject>section h2{font-size:1.5em}div#p>svg>foreignObject>section h3{font-size:1.25em}div#p>svg>foreignObject>section h4{font-size:1em}div#p>svg>foreignObject>section h5{font-size:.875em}div#p>svg>foreignObject>section h6{font-size:.85em;color:#6a737d}div#p>svg>foreignObject>section ol,div#p>svg>foreignObject>section ul{padding-left:2em}div#p>svg>foreignObject>section ol ol,div#p>svg>foreignObject>section ol ul,div#p>svg>foreignObject>section ul ol,div#p>svg>foreignObject>section ul ul{margin-top:0;margin-bottom:0}div#p>svg>foreignObject>section li{word-wrap:break-all}div#p>svg>foreignObject>section li>p{margin-top:16px}div#p>svg>foreignObject>section li+li{margin-top:.25em}div#p>svg>foreignObject>section dl{padding:0}div#p>svg>foreignObject>section dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:600}div#p>svg>foreignObject>section dl dd{padding:0 16px;margin-bottom:16px}div#p>svg>foreignObject>section table{display:block;width:100%;overflow:auto}div#p>svg>foreignObject>section table th{font-weight:600}div#p>svg>foreignObject>section table td,div#p>svg>foreignObject>section table th{padding:6px 13px;border:1px solid #dfe2e5}div#p>svg>foreignObject>section table tr{background-color:#fff;border-top:1px solid #c6cbd1}div#p>svg>foreignObject>section table tr:nth-child(2n){background-color:#f6f8fa}div#p>svg>foreignObject>section img{max-width:100%;box-sizing:initial;background-color:#fff}div#p>svg>foreignObject>section img[align=right]{padding-left:20px}div#p>svg>foreignObject>section img[align=left]{padding-right:20px}div#p>svg>foreignObject>section code{padding:.2em .4em;margin:0;font-size:85%;background-color:rgba(27,31,35,.05);border-radius:3px}div#p>svg>foreignObject>section pre{word-wrap:normal}div#p>svg>foreignObject>section pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}div#p>svg>foreignObject>section .highlight{margin-bottom:16px}div#p>svg>foreignObject>section .highlight pre{margin-bottom:0;word-break:normal}div#p>svg>foreignObject>section pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f6f8fa;border-radius:3px}div#p>svg>foreignObject>section pre code{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:initial;border:0}div#p>svg>foreignObject>section .commit-tease-sha{display:inline-block;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:90%;color:#444d56}div#p>svg>foreignObject>section div#p>svg>foreignObject>section section.commit-tease-sha{--marpit-root-font-size:90%}div#p>svg>foreignObject>section .full-commit .btn-outline:not(:disabled):hover{color:#005cc5;border-color:#005cc5}div#p>svg>foreignObject>section .blob-wrapper{overflow-x:auto;overflow-y:hidden}div#p>svg>foreignObject>section .blob-wrapper-embedded{max-height:240px;overflow-y:auto}div#p>svg>foreignObject>section .blob-num{width:1%;min-width:50px;padding-right:10px;padding-left:10px;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:12px;line-height:20px;color:rgba(27,31,35,.3);text-align:right;white-space:nowrap;vertical-align:top;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}div#p>svg>foreignObject>section div#p>svg>foreignObject>section section.blob-num{--marpit-root-font-size:12px}div#p>svg>foreignObject>section .blob-num:hover{color:rgba(27,31,35,.6)}div#p>svg>foreignObject>section .blob-num:before{content:attr(data-line-number)}div#p>svg>foreignObject>section .blob-code{position:relative;padding-right:10px;padding-left:10px;line-height:20px;vertical-align:top}div#p>svg>foreignObject>section .blob-code-inner{overflow:visible;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:12px;color:#24292e;word-wrap:normal;white-space:pre}div#p>svg>foreignObject>section div#p>svg>foreignObject>section section.blob-code-inner{--marpit-root-font-size:12px}div#p>svg>foreignObject>section .pl-token.active,div#p>svg>foreignObject>section .pl-token:hover{cursor:pointer;background:#ffea7f}div#p>svg>foreignObject>section .tab-size[data-tab-size="1"]{-moz-tab-size:1;-o-tab-size:1;tab-size:1}div#p>svg>foreignObject>section .tab-size[data-tab-size="2"]{-moz-tab-size:2;-o-tab-size:2;tab-size:2}div#p>svg>foreignObject>section .tab-size[data-tab-size="3"]{-moz-tab-size:3;-o-tab-size:3;tab-size:3}div#p>svg>foreignObject>section .tab-size[data-tab-size="4"]{-moz-tab-size:4;-o-tab-size:4;tab-size:4}div#p>svg>foreignObject>section .tab-size[data-tab-size="5"]{-moz-tab-size:5;-o-tab-size:5;tab-size:5}div#p>svg>foreignObject>section .tab-size[data-tab-size="6"]{-moz-tab-size:6;-o-tab-size:6;tab-size:6}div#p>svg>foreignObject>section .tab-size[data-tab-size="7"]{-moz-tab-size:7;-o-tab-size:7;tab-size:7}div#p>svg>foreignObject>section .tab-size[data-tab-size="8"]{-moz-tab-size:8;-o-tab-size:8;tab-size:8}div#p>svg>foreignObject>section .tab-size[data-tab-size="9"]{-moz-tab-size:9;-o-tab-size:9;tab-size:9}div#p>svg>foreignObject>section .tab-size[data-tab-size="10"]{-moz-tab-size:10;-o-tab-size:10;tab-size:10}div#p>svg>foreignObject>section .tab-size[data-tab-size="11"]{-moz-tab-size:11;-o-tab-size:11;tab-size:11}div#p>svg>foreignObject>section .tab-size[data-tab-size="12"]{-moz-tab-size:12;-o-tab-size:12;tab-size:12}div#p>svg>foreignObject>section .task-list-item{list-style-type:none}div#p>svg>foreignObject>section .task-list-item+.task-list-item{margin-top:3px}div#p>svg>foreignObject>section .task-list-item input{margin:0 .2em .25em -1.6em;vertical-align:middle}div#p>svg>foreignObject>section .hljs{display:block;background:#fff;padding:.5em;color:#333;overflow-x:auto}div#p>svg>foreignObject>section .hljs-comment,div#p>svg>foreignObject>section .hljs-meta{color:#969896}div#p>svg>foreignObject>section .hljs-emphasis,div#p>svg>foreignObject>section .hljs-quote,div#p>svg>foreignObject>section .hljs-strong,div#p>svg>foreignObject>section .hljs-template-variable,div#p>svg>foreignObject>section .hljs-variable{color:#df5000}div#p>svg>foreignObject>section .hljs-keyword,div#p>svg>foreignObject>section .hljs-selector-tag,div#p>svg>foreignObject>section .hljs-type{color:#d73a49}div#p>svg>foreignObject>section .hljs-attribute,div#p>svg>foreignObject>section .hljs-bullet,div#p>svg>foreignObject>section .hljs-literal,div#p>svg>foreignObject>section .hljs-symbol{color:#0086b3}div#p>svg>foreignObject>section .hljs-name,div#p>svg>foreignObject>section .hljs-section{color:#63a35c}div#p>svg>foreignObject>section .hljs-tag{color:#333}div#p>svg>foreignObject>section .hljs-attr,div#p>svg>foreignObject>section .hljs-selector-attr,div#p>svg>foreignObject>section .hljs-selector-class,div#p>svg>foreignObject>section .hljs-selector-id,div#p>svg>foreignObject>section .hljs-selector-pseudo,div#p>svg>foreignObject>section .hljs-title{color:#6f42c1}div#p>svg>foreignObject>section .hljs-addition{color:#55a532;background-color:#eaffea}div#p>svg>foreignObject>section .hljs-deletion{color:#bd2c00;background-color:#ffecec}div#p>svg>foreignObject>section .hljs-link{text-decoration:underline}div#p>svg>foreignObject>section .hljs-number{color:#005cc5}div#p>svg>foreignObject>section .hljs-string{color:#032f62}div#p>svg>foreignObject>section svg[data-marp-fitting=svg]{max-height:563px}div#p>svg>foreignObject>section h1{color:#246;font-size:1.6em}div#p>svg>foreignObject>section h1,div#p>svg>foreignObject>section h2{border-bottom:none}div#p>svg>foreignObject>section h2{font-size:1.3em}div#p>svg>foreignObject>section h3{font-size:1.1em}div#p>svg>foreignObject>section h4{font-size:1.05em}div#p>svg>foreignObject>section h5{font-size:1em}div#p>svg>foreignObject>section h6{font-size:.9em}div#p>svg>foreignObject>section h1 strong,div#p>svg>foreignObject>section h2 strong,div#p>svg>foreignObject>section h3 strong,div#p>svg>foreignObject>section h4 strong,div#p>svg>foreignObject>section h5 strong,div#p>svg>foreignObject>section h6 strong{font-weight:inherit;color:#48c}div#p>svg>foreignObject>section hr{height:0;padding-top:.25em}div#p>svg>foreignObject>section pre{border:1px solid #999;line-height:1.15;overflow:visible}div#p>svg>foreignObject>section pre code svg[data-marp-fitting=svg]{max-height:529px}div#p>svg>foreignObject>section footer,div#p>svg>foreignObject>section header{margin:0;position:absolute;left:30px;color:hsla(0,0%,40%,.75);font-size:18px}div#p>svg>foreignObject>section header{top:21px}div#p>svg>foreignObject>section footer{bottom:21px}div#p>svg>foreignObject>section{align-items:stretch;background:#fff;display:flex;flex-direction:column;flex-wrap:nowrap;font-size:29px;height:720px;justify-content:center;padding:78.5px;width:1280px}div#p>svg>foreignObject>section{--marpit-root-font-size:29px}div#p>svg>foreignObject>section>:last-child,div#p>svg>foreignObject>section[data-footer]>:nth-last-child(2){margin-bottom:0}div#p>svg>foreignObject>section>:first-child,div#p>svg>foreignObject>section>header:first-child+*{margin-top:0}div#p>svg>foreignObject>section:after{position:absolute;padding:0;right:30px;bottom:21px;font-size:24px;color:#777}div#p>svg>foreignObject>section:after{--marpit-root-font-size:24px}div#p>svg>foreignObject>section.invert{background-color:#222;color:#e6eaf0}div#p>svg>foreignObject>section.invert:after{color:#999}div#p>svg>foreignObject>section.invert img{background-color:transparent}div#p>svg>foreignObject>section.invert a{color:#50b3ff}div#p>svg>foreignObject>section.invert h1{color:#a3c5e7}div#p>svg>foreignObject>section.invert h2,div#p>svg>foreignObject>section.invert h3,div#p>svg>foreignObject>section.invert h4,div#p>svg>foreignObject>section.invert h5{color:#ebeff5}div#p>svg>foreignObject>section.invert blockquote,div#p>svg>foreignObject>section.invert h6{border-color:#3d3f43;color:#939699}div#p>svg>foreignObject>section.invert h1 strong,div#p>svg>foreignObject>section.invert h2 strong,div#p>svg>foreignObject>section.invert h3 strong,div#p>svg>foreignObject>section.invert h4 strong,div#p>svg>foreignObject>section.invert h5 strong,div#p>svg>foreignObject>section.invert h6 strong{color:#7bf}div#p>svg>foreignObject>section.invert hr{background-color:#3d3f43}div#p>svg>foreignObject>section.invert footer,div#p>svg>foreignObject>section.invert header{color:hsla(0,0%,60%,.75)}div#p>svg>foreignObject>section.invert code,div#p>svg>foreignObject>section.invert kbd{background-color:#111}div#p>svg>foreignObject>section.invert kbd{border-color:#666;box-shadow:inset 0 -1px 0 #555;color:#e6eaf0}div#p>svg>foreignObject>section.invert table tr{background-color:#12181d;border-color:#60657b}div#p>svg>foreignObject>section.invert table tr:nth-child(2n){background-color:#1b2024}div#p>svg>foreignObject>section.invert table td,div#p>svg>foreignObject>section.invert table th{border-color:#5b5e61}div#p>svg>foreignObject>section.invert pre{background-color:#0a0e12;border-color:#777}div#p>svg>foreignObject>section.invert pre code{background-color:transparent}div#p>svg>foreignObject>section[data-color] h1,div#p>svg>foreignObject>section[data-color] h2,div#p>svg>foreignObject>section[data-color] h3,div#p>svg>foreignObject>section[data-color] h4,div#p>svg>foreignObject>section[data-color] h5,div#p>svg>foreignObject>section[data-color] h6{color:currentColor}div#p>svg>foreignObject>section img[alt~=center]{display:block;margin:0 auto}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]{display:block!important;padding:0!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]:after,div#p>svg>foreignObject>section[data-marpit-advanced-background=background]:before,div#p>svg>foreignObject>section[data-marpit-advanced-background=content]:after,div#p>svg>foreignObject>section[data-marpit-advanced-background=content]:before{display:none!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]{all:initial;display:flex;flex-direction:row;height:100%;overflow:hidden;width:100%}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction=vertical]{flex-direction:column}div#p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split]>div[data-marpit-advanced-background-container]{width:var(--marpit-advanced-background-split,50%)}div#p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split=right]>div[data-marpit-advanced-background-container]{margin-left:calc(100% - var(--marpit-advanced-background-split, 50%))}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]>figure{all:initial;background-position:center;background-repeat:no-repeat;background-size:cover;flex:auto;margin:0}div#p>svg>foreignObject>section[data-marpit-advanced-background=content],div#p>svg>foreignObject>section[data-marpit-advanced-background=pseudo]{background:transparent!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=pseudo],div#p>svg[data-marpit-svg]>foreignObject[data-marpit-advanced-background=pseudo]{pointer-events:none!important}div#p>svg>foreignObject>section[data-marpit-advanced-background-split]{width:100%;height:100%}</style></head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id="p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1">
+<h1>SchoolRISCV</h1>
+<p><a href="https://github.com/zhelnio/schoolRISCV">https://github.com/zhelnio/schoolRISCV</a></p>
+<p>Stanislav Zhelnio, 2020</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-marpit-pagination="2" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Благодарности</h2>
+<ul>
+<li>David Harris &amp; Sarah Harris</li>
+<li>Юрий Панчул</li>
+<li>Александр Романов</li>
+<li>IVA Technologies</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-marpit-pagination="3" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Что такое schoolRISCV</h2>
+<ul>
+<li>простое процессорное ядро для практического преподавания школьникам основ цифровой схемотехники</li>
+<li>написано на языке Verilog</li>
+<li>реализует подмножество архитектуры RISCV</li>
+<li>вырос из аналогичного проекта schoolMIPS</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-marpit-pagination="4" data-marpit-pagination-total="77" style="--paginate:true;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;img/ma.png&quot;);background-size:45%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="4" data-paginate="true" data-marpit-pagination="4" data-marpit-pagination-total="77" style="--paginate:true;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h2>Микроархитектура</h2>
+
+<ul>
+<li>
+<p>аппаратная реализация архитектуры в виде схемы</p>
+</li>
+<li>
+<p>возможны разные реализации одной архитектуры:</p>
+<ul>
+<li>однотактная</li>
+<li>многотактная</li>
+<li>конвейерная</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="4" data-marpit-pagination-total="77"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-marpit-pagination="5" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Особенности schoolRISCV</h2>
+<ul>
+<li>однотактная реализация</li>
+<li>нет памяти данных</li>
+<li>словная адресация памяти команд</li>
+<li>9 инструкций: <strong>add</strong>, <strong>or</strong>, <strong>srl</strong>, <strong>sltu</strong>, <strong>sub</strong>, <strong>addi</strong>, <strong>lui</strong>, <strong>beq</strong>, <strong>bne</strong></li>
+</ul>
+<p>...и этого уже достаточно, чтобы посчитать квадратный корень!</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-marpit-pagination="6" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Спецификация RISC-V</h2>
+<p><img src="img/riscv_spec.png" alt="h:500 center" style="height:500px;" /></p>
+<p><a href="https://riscv.org/specifications/">https://riscv.org/specifications/</a></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-marpit-pagination="7" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Последовательность проектирования</h2>
+<ul>
+<li>
+<p>тракт данных<br />
+Data Path</p>
+</li>
+<li>
+<p>устройство управления<br />
+Control Unit</p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-marpit-pagination="8" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Архитектурное состояние</h2>
+<p><img src="png/cpu_00.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-marpit-pagination="9" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>ADDI: выборка инструкции</h2>
+<p><img src="png/cpu_01.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-marpit-pagination="10" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>ADDI: спецификация</h2>
+<p><img src="img/riscv_addi.png" alt="w:1080 center" style="width:1080px;" /><br />
+<img src="img/riscv_immi.png" alt="w:1080 center" style="width:1080px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-marpit-pagination="11" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>ADDI: считывание операнда из регистрового файла</h2>
+<p><img src="png/cpu_02.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-marpit-pagination="12" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>ADDI: декодирование константы из тела инструкции</h2>
+<p><img src="png/cpu_03.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-marpit-pagination="13" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>ADDI: вычисление результата арифметической операции</h2>
+<p><img src="png/cpu_04.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-marpit-pagination="14" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>ADDI: декодирование регистра назначения</h2>
+<p><img src="png/cpu_05.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-marpit-pagination="15" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>ADDI: запись результата в регистр назначения</h2>
+<p><img src="png/cpu_06.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-marpit-pagination="16" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>ADDI: вычисление адреса следующей инструкции</h2>
+<p><img src="png/cpu_07.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-paginate="true" data-marpit-pagination="17" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>ADDI: итоговая схема</h2>
+<p><img src="png/cpu_08.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-marpit-pagination="18" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>ADD: спецификация</h2>
+<p><img src="img/riscv_add.png" alt="w:1080 center" style="width:1080px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-paginate="true" data-marpit-pagination="19" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>ADD: выборка операнда rs1</h2>
+<p><img src="png/cpu_09.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-paginate="true" data-marpit-pagination="20" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>ADD: выборка операнда rs2</h2>
+<p><img src="png/cpu_10.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-paginate="true" data-marpit-pagination="21" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>ADD: передача второго операнда в АЛУ</h2>
+<p><img src="png/cpu_11.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-paginate="true" data-marpit-pagination="22" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>ADD: итоговая схема</h2>
+<p><img src="png/cpu_12.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-paginate="true" data-marpit-pagination="23" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>LUI: спецификация</h2>
+<p><img src="img/riscv_lui.png" alt="w:1080 center" style="width:1080px;" /><br />
+...<br />
+<img src="img/riscv_immu.png" alt="w:1080 center" style="width:1080px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-paginate="true" data-marpit-pagination="24" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>LUI: декодирование и передача константы</h2>
+<p><img src="png/cpu_13.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-paginate="true" data-marpit-pagination="25" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>BEQ: спецификация</h2>
+<p><img src="img/riscv_bne.png" alt="w:1080 center" style="width:1080px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-paginate="true" data-marpit-pagination="26" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>BEQ: вычисление адреса условного перехода</h2>
+<p><img src="png/cpu_14.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-paginate="true" data-marpit-pagination="27" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>BEQ: выбор адреса</h2>
+<p><img src="png/cpu_15.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-paginate="true" data-marpit-pagination="28" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>BEQ: определение необходимости перехода</h2>
+<p><img src="png/cpu_16.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-paginate="true" data-marpit-pagination="29" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>BEQ: итоговая схема</h2>
+<p><img src="png/cpu_17.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-paginate="true" data-marpit-pagination="30" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>BNE: BEQ наоборот</h2>
+<p><img src="png/cpu_18.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-paginate="true" data-marpit-pagination="31" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>BNE: новая цепь управления</h2>
+<p><img src="png/cpu_19.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-paginate="true" data-marpit-pagination="32" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Устройство управления</h2>
+<p><img src="png/cpu_20.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-paginate="true" data-marpit-pagination="33" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Декодирование типа инструкции</h2>
+<p><img src="png/cpu_21.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-paginate="true" data-marpit-pagination="34" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Итоговая схема процессора</h2>
+<p><img src="png/cpu_22.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-paginate="true" data-marpit-pagination="35" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Состав процессора</h2>
+<ul>
+<li>Тракт данных
+<ul>
+<li>Счетчик команд <em>PC</em></li>
+<li>Память инструкций <em>Instruction Memory</em></li>
+<li>Декодер инструкций <em>Instruction Decoder</em></li>
+<li>Регистровый файл <em>Register File</em></li>
+<li>Арифметико-логическое устройство <em>ALU</em></li>
+<li>Сумматоры адреса <em>pcPlus4</em> и <em>pcBranch</em></li>
+<li>Мультиплексоры <em>pcSrc</em>, <em>wdSrc</em> и <em>aluSrc</em></li>
+</ul>
+</li>
+<li>Устройство управления</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-paginate="true" data-marpit-pagination="36" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Реализация: PC, сумматоры и мультиплексор адреса</h2>
+<pre><code class="language-Verilog"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-comment">// sm_register.v</span>
+<span class="hljs-keyword">module</span> sm_register
+(
+    <span class="hljs-keyword">input</span>                 clk,
+    <span class="hljs-keyword">input</span>                 rst,
+    <span class="hljs-keyword">input</span>      [ <span class="hljs-number">31</span> : <span class="hljs-number">0</span> ] d,
+    <span class="hljs-keyword">output</span> <span class="hljs-keyword">reg</span> [ <span class="hljs-number">31</span> : <span class="hljs-number">0</span> ] q
+);
+    <span class="hljs-keyword">always</span> @ (<span class="hljs-keyword">posedge</span> clk <span class="hljs-keyword">or</span> <span class="hljs-keyword">negedge</span> rst)
+        <span class="hljs-keyword">if</span>(~rst) q &lt;= <span class="hljs-number">32&#x27;b0</span>;
+        <span class="hljs-keyword">else</span>     q &lt;= d;
+<span class="hljs-keyword">endmodule</span>
+</span></span></foreignObject></svg></code></pre>
+<pre><code class="language-Verilog"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-comment">// sr_cpu.v</span>
+    <span class="hljs-keyword">wire</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] pc;
+    <span class="hljs-keyword">wire</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] pcBranch = pc + immB;
+    <span class="hljs-keyword">wire</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] pcPlus4  = pc + <span class="hljs-number">4</span>;
+    <span class="hljs-keyword">wire</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] pcNext   = pcSrc ? pcBranch : pcPlus4;
+    sm_register r_pc(clk ,rst_n, pcNext, pc);
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-paginate="true" data-marpit-pagination="37" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Реализация: память инструкций</h2>
+<pre><code class="language-Verilog"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-comment">// sm_rom.v</span>
+<span class="hljs-keyword">module</span> sm_rom
+#(
+    <span class="hljs-keyword">parameter</span> SIZE = <span class="hljs-number">64</span>
+)
+(
+    <span class="hljs-keyword">input</span>  [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] a,
+    <span class="hljs-keyword">output</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] rd
+);
+    <span class="hljs-keyword">reg</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] rom [SIZE - <span class="hljs-number">1</span>:<span class="hljs-number">0</span>];
+    <span class="hljs-keyword">assign</span> rd = rom [a];
+
+    <span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+        <span class="hljs-built_in">$readmemh</span> (<span class="hljs-string">&quot;program.hex&quot;</span>, rom);
+    <span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">endmodule</span>
+</span></span></foreignObject></svg></code></pre>
+<pre><code class="language-Verilog"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-comment">// sm_top.v</span>
+sm_rom reset_rom(imAddr, imData);
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-paginate="true" data-marpit-pagination="38" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Реализация: декодер инструкций (начало)</h2>
+<pre><code class="language-Verilog"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-comment">// sr_cpu.v</span>
+<span class="hljs-keyword">module</span> sr_decode
+(
+    <span class="hljs-keyword">input</span>      [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] instr,
+    <span class="hljs-keyword">output</span>     [ <span class="hljs-number">6</span>:<span class="hljs-number">0</span>] cmdOp,
+    <span class="hljs-keyword">output</span>     [ <span class="hljs-number">4</span>:<span class="hljs-number">0</span>] rd,
+    <span class="hljs-keyword">output</span>     [ <span class="hljs-number">2</span>:<span class="hljs-number">0</span>] cmdF3,
+    <span class="hljs-keyword">output</span>     [ <span class="hljs-number">4</span>:<span class="hljs-number">0</span>] rs1,
+    <span class="hljs-keyword">output</span>     [ <span class="hljs-number">4</span>:<span class="hljs-number">0</span>] rs2,
+    <span class="hljs-keyword">output</span>     [ <span class="hljs-number">6</span>:<span class="hljs-number">0</span>] cmdF7,
+    <span class="hljs-keyword">output</span> <span class="hljs-keyword">reg</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] immI,
+    <span class="hljs-keyword">output</span> <span class="hljs-keyword">reg</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] immB,
+    <span class="hljs-keyword">output</span> <span class="hljs-keyword">reg</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] immU 
+);
+    <span class="hljs-keyword">assign</span> cmdOp = instr[ <span class="hljs-number">6</span>: <span class="hljs-number">0</span>];
+    <span class="hljs-keyword">assign</span> rd    = instr[<span class="hljs-number">11</span>: <span class="hljs-number">7</span>];
+    <span class="hljs-keyword">assign</span> cmdF3 = instr[<span class="hljs-number">14</span>:<span class="hljs-number">12</span>];
+    <span class="hljs-keyword">assign</span> rs1   = instr[<span class="hljs-number">19</span>:<span class="hljs-number">15</span>];
+    <span class="hljs-keyword">assign</span> rs2   = instr[<span class="hljs-number">24</span>:<span class="hljs-number">20</span>];
+    <span class="hljs-keyword">assign</span> cmdF7 = instr[<span class="hljs-number">31</span>:<span class="hljs-number">25</span>];
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-paginate="true" data-marpit-pagination="39" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Реализация: декодер инструкций (продолжение)</h2>
+<pre><code class="language-Verilog"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>    <span class="hljs-comment">// I-immediate</span>
+    <span class="hljs-keyword">always</span> @ (*) <span class="hljs-keyword">begin</span>
+        immI[<span class="hljs-number">10</span>: <span class="hljs-number">0</span>] = instr[<span class="hljs-number">30</span>:<span class="hljs-number">20</span>];
+        immI[<span class="hljs-number">31</span>:<span class="hljs-number">11</span>] = { <span class="hljs-number">21</span> {instr[<span class="hljs-number">31</span>]} };
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-comment">// B-immediate</span>
+    <span class="hljs-keyword">always</span> @ (*) <span class="hljs-keyword">begin</span>
+        immB[    <span class="hljs-number">0</span>] = <span class="hljs-number">1&#x27;b0</span>;
+        immB[ <span class="hljs-number">4</span>: <span class="hljs-number">1</span>] = instr[<span class="hljs-number">11</span>:<span class="hljs-number">8</span>];
+        immB[<span class="hljs-number">10</span>: <span class="hljs-number">5</span>] = instr[<span class="hljs-number">30</span>:<span class="hljs-number">25</span>];
+        immB[<span class="hljs-number">31</span>:<span class="hljs-number">11</span>] = { <span class="hljs-number">21</span> {instr[<span class="hljs-number">31</span>]} };
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-comment">// U-immediate</span>
+    <span class="hljs-keyword">always</span> @ (*) <span class="hljs-keyword">begin</span>
+        immU[<span class="hljs-number">11</span>: <span class="hljs-number">0</span>] = <span class="hljs-number">12&#x27;b0</span>;
+        immU[<span class="hljs-number">31</span>:<span class="hljs-number">12</span>] = instr[<span class="hljs-number">31</span>:<span class="hljs-number">12</span>];
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">endmodule</span>
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-paginate="true" data-marpit-pagination="40" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Реализация: регистровый файл</h2>
+<pre><code class="language-Verilog"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-comment">// sr_cpu.v</span>
+<span class="hljs-keyword">module</span> sm_register_file
+(
+    <span class="hljs-keyword">input</span>         clk,
+    <span class="hljs-keyword">input</span>  [ <span class="hljs-number">4</span>:<span class="hljs-number">0</span>] a0,
+    <span class="hljs-keyword">input</span>  [ <span class="hljs-number">4</span>:<span class="hljs-number">0</span>] a1,
+    <span class="hljs-keyword">input</span>  [ <span class="hljs-number">4</span>:<span class="hljs-number">0</span>] a2,
+    <span class="hljs-keyword">input</span>  [ <span class="hljs-number">4</span>:<span class="hljs-number">0</span>] a3,
+    <span class="hljs-keyword">output</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] rd0,
+    <span class="hljs-keyword">output</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] rd1,
+    <span class="hljs-keyword">output</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] rd2,
+    <span class="hljs-keyword">input</span>  [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] wd3,
+    <span class="hljs-keyword">input</span>         we3
+);
+    <span class="hljs-keyword">reg</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] rf [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>];
+
+    <span class="hljs-keyword">assign</span> rd0 = (a0 != <span class="hljs-number">0</span>) ? rf [a0] : <span class="hljs-number">32&#x27;b0</span>;
+    <span class="hljs-keyword">assign</span> rd1 = (a1 != <span class="hljs-number">0</span>) ? rf [a1] : <span class="hljs-number">32&#x27;b0</span>;
+    <span class="hljs-keyword">assign</span> rd2 = (a2 != <span class="hljs-number">0</span>) ? rf [a2] : <span class="hljs-number">32&#x27;b0</span>;
+
+    <span class="hljs-keyword">always</span> @ (<span class="hljs-keyword">posedge</span> clk)
+        <span class="hljs-keyword">if</span>(we3) rf [a3] &lt;= wd3;
+<span class="hljs-keyword">endmodule</span>
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-paginate="true" data-marpit-pagination="41" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Реализация: операции ALU</h2>
+<pre><code class="language-Verilog"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-comment">// sr_cpu.vh</span>
+
+<span class="hljs-meta">`<span class="hljs-meta-keyword">define</span> ALU_ADD     3&#x27;b000  // A + B</span>
+
+<span class="hljs-meta">`<span class="hljs-meta-keyword">define</span> ALU_OR      3&#x27;b001  // A | B</span>
+
+<span class="hljs-meta">`<span class="hljs-meta-keyword">define</span> ALU_SRL     3&#x27;b010  // A &gt;&gt; B</span>
+
+<span class="hljs-meta">`<span class="hljs-meta-keyword">define</span> ALU_SLTU    3&#x27;b011  // A &lt; B ? 1 : 0</span>
+
+<span class="hljs-meta">`<span class="hljs-meta-keyword">define</span> ALU_SUB     3&#x27;b100  // A - B</span>
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="42" data-paginate="true" data-marpit-pagination="42" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Реализация: ALU</h2>
+<pre><code class="language-Verilog"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-comment">// sr_cpu.v</span>
+<span class="hljs-keyword">module</span> sr_alu
+(
+    <span class="hljs-keyword">input</span>  [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] srcA,
+    <span class="hljs-keyword">input</span>  [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] srcB,
+    <span class="hljs-keyword">input</span>  [ <span class="hljs-number">2</span>:<span class="hljs-number">0</span>] oper,
+    <span class="hljs-keyword">output</span>        zero,
+    <span class="hljs-keyword">output</span> <span class="hljs-keyword">reg</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] result
+);
+    <span class="hljs-keyword">always</span> @ (*) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">case</span> (oper)
+            <span class="hljs-keyword">default</span>   : result = srcA + srcB;
+            <span class="hljs-meta">`ALU_ADD  : result = srcA + srcB;</span>
+            <span class="hljs-meta">`ALU_OR   : result = srcA | srcB;</span>
+            <span class="hljs-meta">`ALU_SRL  : result = srcA &gt;&gt; srcB [4:0];</span>
+            <span class="hljs-meta">`ALU_SLTU : result = (srcA &lt; srcB) ? 1 : 0;</span>
+            <span class="hljs-meta">`ALU_SUB : result = srcA - srcB;</span>
+        <span class="hljs-keyword">endcase</span>
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">assign</span> zero   = (result == <span class="hljs-number">0</span>);
+<span class="hljs-keyword">endmodule</span>
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="43" data-paginate="true" data-marpit-pagination="43" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Реализация: мультиплексоры данных</h2>
+<pre><code class="language-Verilog"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-comment">// sr_cpu.v</span>
+<span class="hljs-keyword">wire</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] srcB = aluSrc ? immI : rd2;
+</span></span></foreignObject></svg></code></pre>
+<pre><code class="language-Verilog"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-comment">// sr_cpu.v</span>
+<span class="hljs-keyword">assign</span> wd3 = wdSrc ? immU : aluResult;
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="44" data-paginate="true" data-marpit-pagination="44" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 1</h2>
+<p><img src="png/cu_00.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="45" data-paginate="true" data-marpit-pagination="45" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Код операции: спецификация</h2>
+<p><img src="img/riscv_iset.png" alt="h:620 center" style="height:620px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-paginate="true" data-marpit-pagination="46" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 2</h2>
+<p><img src="png/cu_01.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="47" data-paginate="true" data-marpit-pagination="47" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 3</h2>
+<p><img src="png/cu_02.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="48" data-paginate="true" data-marpit-pagination="48" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 4</h2>
+<p><img src="png/cu_03.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="49" data-paginate="true" data-marpit-pagination="49" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 5</h2>
+<p><img src="png/cu_04.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="50" data-paginate="true" data-marpit-pagination="50" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 6</h2>
+<p><img src="png/cu_05.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="51" data-paginate="true" data-marpit-pagination="51" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 7</h2>
+<p><img src="png/cu_06.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="52" data-paginate="true" data-marpit-pagination="52" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 8</h2>
+<p><img src="png/cu_07.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="53" data-paginate="true" data-marpit-pagination="53" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 9</h2>
+<p><img src="png/cu_08.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="54" data-paginate="true" data-marpit-pagination="54" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 10</h2>
+<p><img src="png/cu_09.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="55" data-paginate="true" data-marpit-pagination="55" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 11</h2>
+<p><img src="png/cu_10.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="56" data-paginate="true" data-marpit-pagination="56" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 12</h2>
+<p><img src="png/cu_11.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="57" data-paginate="true" data-marpit-pagination="57" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 13</h2>
+<p><img src="png/cu_12.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="58" data-paginate="true" data-marpit-pagination="58" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 14</h2>
+<p><img src="png/cu_13.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="59" data-paginate="true" data-marpit-pagination="59" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 15</h2>
+<p><img src="png/cu_14.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="60" data-paginate="true" data-marpit-pagination="60" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 16</h2>
+<p><img src="png/cu_15.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="61" data-paginate="true" data-marpit-pagination="61" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 17</h2>
+<p><img src="png/cu_16.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="62" data-paginate="true" data-marpit-pagination="62" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 18</h2>
+<p><img src="png/cu_17.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="63" data-paginate="true" data-marpit-pagination="63" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 19</h2>
+<p><img src="png/cu_18.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="64" data-paginate="true" data-marpit-pagination="64" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 20</h2>
+<p><img src="png/cu_19.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="65" data-paginate="true" data-marpit-pagination="65" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 21</h2>
+<p><img src="png/cu_20.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="66" data-paginate="true" data-marpit-pagination="66" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 22</h2>
+<p><img src="png/cu_21.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="67" data-paginate="true" data-marpit-pagination="67" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 23</h2>
+<p><img src="png/cu_22.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="68" data-paginate="true" data-marpit-pagination="68" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 24</h2>
+<p><img src="png/cu_23.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="69" data-paginate="true" data-marpit-pagination="69" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 25</h2>
+<p><img src="png/cu_24.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="70" data-paginate="true" data-marpit-pagination="70" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Сигналы управления 26</h2>
+<p><img src="png/cu_25.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="71" data-paginate="true" data-marpit-pagination="71" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Реализация: коды инструкций</h2>
+<pre><code class="language-Verilog"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-comment">// sr_cpu.vh</span>
+<span class="hljs-comment">// instruction opcode</span>
+<span class="hljs-meta">`<span class="hljs-meta-keyword">define</span> RVOP_ADDI   7&#x27;b0010011</span>
+<span class="hljs-meta">`<span class="hljs-meta-keyword">define</span> RVOP_BEQ    7&#x27;b1100011</span>
+...
+
+<span class="hljs-comment">// instruction funct3</span>
+<span class="hljs-meta">`<span class="hljs-meta-keyword">define</span> RVF3_ADDI   3&#x27;b000</span>
+<span class="hljs-meta">`<span class="hljs-meta-keyword">define</span> RVF3_BEQ    3&#x27;b000</span>
+<span class="hljs-meta">`<span class="hljs-meta-keyword">define</span> RVF3_BNE    3&#x27;b001</span>
+<span class="hljs-meta">`<span class="hljs-meta-keyword">define</span> RVF3_ADD    3&#x27;b000</span>
+...
+<span class="hljs-meta">`<span class="hljs-meta-keyword">define</span> RVF3_ANY    3&#x27;b???</span>
+
+<span class="hljs-comment">// instruction funct7</span>
+<span class="hljs-meta">`<span class="hljs-meta-keyword">define</span> RVF7_ADD    7&#x27;b0000000</span>
+...
+<span class="hljs-meta">`<span class="hljs-meta-keyword">define</span> RVF7_ANY    7&#x27;b??????? </span>
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="72" data-paginate="true" data-marpit-pagination="72" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Реализация: устройство управления (начало)</h2>
+<pre><code class="language-Verilog"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-comment">// sr_cpu.v</span>
+<span class="hljs-keyword">module</span> sr_control
+(
+    <span class="hljs-keyword">input</span>     [ <span class="hljs-number">6</span>:<span class="hljs-number">0</span>] cmdOp,
+    <span class="hljs-keyword">input</span>     [ <span class="hljs-number">2</span>:<span class="hljs-number">0</span>] cmdF3,
+    <span class="hljs-keyword">input</span>     [ <span class="hljs-number">6</span>:<span class="hljs-number">0</span>] cmdF7,
+    <span class="hljs-keyword">input</span>            aluZero,
+    <span class="hljs-keyword">output</span>           pcSrc, 
+    <span class="hljs-keyword">output</span> <span class="hljs-keyword">reg</span>       regWrite, 
+    <span class="hljs-keyword">output</span> <span class="hljs-keyword">reg</span>       aluSrc,
+    <span class="hljs-keyword">output</span> <span class="hljs-keyword">reg</span>       wdSrc,
+    <span class="hljs-keyword">output</span> <span class="hljs-keyword">reg</span> [<span class="hljs-number">2</span>:<span class="hljs-number">0</span>] aluControl
+);
+    <span class="hljs-keyword">reg</span>          branch;
+    <span class="hljs-keyword">reg</span>          condZero;
+    <span class="hljs-keyword">assign</span> pcSrc = branch &amp; (aluZero == condZero);
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="73" data-paginate="true" data-marpit-pagination="73" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Реализация: устройство управления (продолжение)</h2>
+<pre><code class="language-Verilog"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-comment">// sr_cpu.v</span>
+    <span class="hljs-keyword">always</span> @ (*) <span class="hljs-keyword">begin</span>
+        branch      = <span class="hljs-number">1&#x27;b0</span>;
+        condZero    = <span class="hljs-number">1&#x27;b0</span>;
+        regWrite    = <span class="hljs-number">1&#x27;b0</span>;
+        aluSrc      = <span class="hljs-number">1&#x27;b0</span>;
+        wdSrc       = <span class="hljs-number">1&#x27;b0</span>;
+        aluControl  = <span class="hljs-meta">`ALU_ADD;</span>
+
+        <span class="hljs-keyword">casez</span>( {cmdF7, cmdF3, cmdOp} )
+            { <span class="hljs-meta">`RVF7_ADD,  `RVF3_ADD,  `RVOP_ADD  } : begin regWrite = 1&#x27;b1; aluControl = `ALU_ADD;  end</span>
+            { <span class="hljs-meta">`RVF7_OR,   `RVF3_OR,   `RVOP_OR   } : begin regWrite = 1&#x27;b1; aluControl = `ALU_OR;   end</span>
+            { <span class="hljs-meta">`RVF7_SRL,  `RVF3_SRL,  `RVOP_SRL  } : begin regWrite = 1&#x27;b1; aluControl = `ALU_SRL;  end</span>
+            { <span class="hljs-meta">`RVF7_SLTU, `RVF3_SLTU, `RVOP_SLTU } : begin regWrite = 1&#x27;b1; aluControl = `ALU_SLTU; end</span>
+            { <span class="hljs-meta">`RVF7_SUB,  `RVF3_SUB,  `RVOP_SUB  } : begin regWrite = 1&#x27;b1; aluControl = `ALU_SUB;  end</span>
+
+            { <span class="hljs-meta">`RVF7_ANY,  `RVF3_ADDI, `RVOP_ADDI } : begin regWrite = 1&#x27;b1; aluSrc = 1&#x27;b1; aluControl = `ALU_ADD; end</span>
+            { <span class="hljs-meta">`RVF7_ANY,  `RVF3_ANY,  `RVOP_LUI  } : begin regWrite = 1&#x27;b1; wdSrc  = 1&#x27;b1; end</span>
+
+            { <span class="hljs-meta">`RVF7_ANY,  `RVF3_BEQ,  `RVOP_BEQ  } : begin branch = 1&#x27;b1; condZero = 1&#x27;b1; aluControl = `ALU_SUB; end</span>
+            { <span class="hljs-meta">`RVF7_ANY,  `RVF3_BNE,  `RVOP_BNE  } : begin branch = 1&#x27;b1; aluControl = `ALU_SUB; end</span>
+        <span class="hljs-keyword">endcase</span>
+    <span class="hljs-keyword">end</span>
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="74" data-paginate="true" data-marpit-pagination="74" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Структура проекта и подключение периферии</h2>
+<p><img src="img/board.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="75" data-paginate="true" data-marpit-pagination="75" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Программирование системы</h2>
+<p><img src="png/program_flow.png" alt="h:600 center" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="76" data-paginate="true" data-marpit-pagination="76" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Что дальше?</h2>
+<ul>
+<li>
+<p>Цифровая схемотехника и архитектура компьютера<br />
+David Harris &amp; Sarah Harris<br />
+ДМК Пресс</p>
+</li>
+<li>
+<p>Цифровой синтез: практический курс<br />
+Александр Романов &amp; Юрий Панчул<br />
+ДМК Пресс</p>
+</li>
+<li>
+<p>Syntacore SCR1<br />
+<a href="https://github.com/syntacore/scr1">https://github.com/syntacore/scr1</a></p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="77" data-paginate="true" data-marpit-pagination="77" data-marpit-pagination-total="77" style="--paginate:true;">
+<h2>Ваши вопросы?</h2>
+</section>
+<script>!function(){"use strict";let t=void 0;function e(e){let r=!1;Array.from(document.querySelectorAll("svg[data-marpit-svg]"),i=>{const{children:o,clientHeight:n,clientWidth:a,viewBox:s}=i;i.style.transform||(i.style.transform="translateZ(0)");const l=e||window!==window.parent&&window.parent.marpitSVGPolyfillZoomFactor||i.currentScale||1;t!==l&&(t=l,r=l);const c=s.baseVal.width/l,d=s.baseVal.height/l,p=Math.min(n/d,a/c);for(let t=0;t<o.length;t+=1){const{style:e}=o[t].firstChild;e.position||(e.position="fixed"),e.transformOrigin||(e.transformOrigin="0 0"),e.transform=`scale(${p}) translateZ(0)`}}),!1!==r&&Object.defineProperty(window,"marpitSVGPolyfillZoomFactor",{configurable:!0,value:r})}const r=(t,e,r)=>{if(t.getAttribute(e)!==r)return t.setAttribute(e,r),!0};function i(t=!0){for(const t of"Apple Computer, Inc."===navigator.vendor?[e]:[])t();Array.from(document.querySelectorAll('svg[data-marp-fitting="svg"]'),t=>{var e;const i=t.firstChild,o=i.firstChild,{scrollWidth:n,scrollHeight:a}=o;let s,l=1;if(t.hasAttribute("data-marp-fitting-code")&&(s=null===(e=t.parentElement)||void 0===e?void 0:e.parentElement),t.hasAttribute("data-marp-fitting-math")&&(s=t.parentElement),s){const t=getComputedStyle(s),e=Math.ceil(s.clientWidth-parseFloat(t.paddingLeft||"0")-parseFloat(t.paddingRight||"0"));e&&(l=e)}const c=Math.max(n,l),d=Math.max(a,1),p=`0 0 ${c} ${d}`;r(i,"width",""+c),r(i,"height",""+d),r(t,"preserveAspectRatio",getComputedStyle(t).getPropertyValue("--preserve-aspect-ratio")||"xMinYMin meet"),r(t,"viewBox",p)&&t.classList.toggle("__reflow__")}),t&&window.requestAnimationFrame(()=>i(t))}!function(){if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");window.marpCoreBrowserScript?console.warn("Marp Core's browser script has already executed."):(Object.defineProperty(window,"marpCoreBrowserScript",{value:!0}),i())}()}();
+</script></foreignObject></svg></div><script>!function(){"use strict";var e=function(e,t){var n,r=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),a=[].filter.call("string"==typeof e.slides?r.querySelectorAll(e.slides):e.slides||r.children,(function(e){return"SCRIPT"!==e.nodeName})),s={},i=function(e,t){return(t=t||{}).index=a.indexOf(e),t.slide=e,t},o=function(e,t){s[e]=(s[e]||[]).filter((function(e){return e!==t}))},l=function(e,t){return(s[e]||[]).reduce((function(e,n){return e&&!1!==n(t)}),!0)},c=function(e,t){a[e]&&(n&&l("deactivate",i(n,t)),n=a[e],l("activate",i(n,t)))},d=function(e,t){var r=a.indexOf(n)+e;l(e>0?"next":"prev",i(n,t))&&c(r,t)},u={off:o,on:function(e,t){return(s[e]||(s[e]=[])).push(t),o.bind(null,e,t)},fire:l,slide:function(e,t){if(!arguments.length)return a.indexOf(n);l("slide",i(a[e],t))&&c(e,t)},next:d.bind(null,1),prev:d.bind(null,-1),parent:r,slides:a,destroy:function(e){l("destroy",i(n,e)),s={}}};return(t||[]).forEach((function(e){e(u)})),n||c(0),u};function t(e){e.parent.classList.add("bespoke-marp-parent"),e.slides.forEach(e=>e.classList.add("bespoke-marp-slide")),e.on("activate",t=>{const n=t.slide,r=!n.classList.contains("bespoke-marp-active");e.slides.forEach(e=>{e.classList.remove("bespoke-marp-active"),e.setAttribute("aria-hidden","true")}),n.classList.add("bespoke-marp-active"),n.removeAttribute("aria-hidden"),r&&(n.classList.add("bespoke-marp-active-ready"),document.body.clientHeight,n.classList.remove("bespoke-marp-active-ready"))})}function n(e){let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map(e=>[null,...e.querySelectorAll("[data-marpit-fragment]")])});const r=r=>void 0!==e.fragments[t][n+r],a=(r,a)=>{t=r,n=a,e.fragments.forEach((e,t)=>{e.forEach((e,n)=>{if(null==e)return;const s=t<r||t===r&&n<=a;e.setAttribute("data-bespoke-marp-fragment",s?"active":"inactive"),t===r&&n===a?e.setAttribute("data-bespoke-marp-current-fragment","current"):e.removeAttribute("data-bespoke-marp-current-fragment")})}),e.fragmentIndex=a;const s={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:a};e.fire("fragment",s)};e.on("next",({fragment:s=!0})=>{if(s){if(r(1))return a(t,n+1),!1;const s=t+1;e.fragments[s]&&a(s,0)}else{const r=e.fragments[t].length;if(n+1<r)return a(t,r-1),!1;const s=e.fragments[t+1];s&&a(t+1,s.length-1)}}),e.on("prev",({fragment:s=!0})=>{if(r(-1)&&s)return a(t,n-1),!1;const i=t-1;e.fragments[i]&&a(i,e.fragments[i].length-1)}),e.on("slide",({index:t,fragment:n})=>{let r=0;if(void 0!==n){const a=e.fragments[t];if(a){const{length:e}=a;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}a(t,r)}),a(0,0)}var r=function(e,t,n){return e(n={path:t,exports:{},require:function(e,t){return function(){throw new Error("Dynamic requires are not currently supported by @rollup/plugin-commonjs")}(null==t&&n.path)}},n.exports),n.exports}((function(e){
+/*!
+* screenfull
+* v5.0.2 - 2020-02-13
+* (c) Sindre Sorhus; MIT License
+*/
+!function(){var t="undefined"!=typeof window&&void 0!==window.document?window.document:{},n=e.exports,r=function(){for(var e,n=[["requestFullscreen","exitFullscreen","fullscreenElement","fullscreenEnabled","fullscreenchange","fullscreenerror"],["webkitRequestFullscreen","webkitExitFullscreen","webkitFullscreenElement","webkitFullscreenEnabled","webkitfullscreenchange","webkitfullscreenerror"],["webkitRequestFullScreen","webkitCancelFullScreen","webkitCurrentFullScreenElement","webkitCancelFullScreen","webkitfullscreenchange","webkitfullscreenerror"],["mozRequestFullScreen","mozCancelFullScreen","mozFullScreenElement","mozFullScreenEnabled","mozfullscreenchange","mozfullscreenerror"],["msRequestFullscreen","msExitFullscreen","msFullscreenElement","msFullscreenEnabled","MSFullscreenChange","MSFullscreenError"]],r=0,a=n.length,s={};r<a;r++)if((e=n[r])&&e[1]in t){for(r=0;r<e.length;r++)s[n[0][r]]=e[r];return s}return!1}(),a={change:r.fullscreenchange,error:r.fullscreenerror},s={request:function(e){return new Promise(function(n,a){var s=function(){this.off("change",s),n()}.bind(this);this.on("change",s);var i=(e=e||t.documentElement)[r.requestFullscreen]();i instanceof Promise&&i.then(s).catch(a)}.bind(this))},exit:function(){return new Promise(function(e,n){if(this.isFullscreen){var a=function(){this.off("change",a),e()}.bind(this);this.on("change",a);var s=t[r.exitFullscreen]();s instanceof Promise&&s.then(a).catch(n)}else e()}.bind(this))},toggle:function(e){return this.isFullscreen?this.exit():this.request(e)},onchange:function(e){this.on("change",e)},onerror:function(e){this.on("error",e)},on:function(e,n){var r=a[e];r&&t.addEventListener(r,n,!1)},off:function(e,n){var r=a[e];r&&t.removeEventListener(r,n,!1)},raw:r};r?(Object.defineProperties(s,{isFullscreen:{get:function(){return Boolean(t[r.fullscreenElement])}},element:{enumerable:!0,get:function(){return t[r.fullscreenElement]}},isEnabled:{enumerable:!0,get:function(){return Boolean(t[r.fullscreenEnabled])}}}),n?e.exports=s:window.screenfull=s):n?e.exports={isEnabled:!1}:window.screenfull={isEnabled:!1}}()}));function a(e){e.fullscreen=()=>{r.isEnabled&&r.toggle(document.body)},document.addEventListener("keydown",t=>{70!==t.which&&122!==t.which||t.altKey||t.ctrlKey||t.metaKey||!r.isEnabled||(e.fullscreen(),t.preventDefault())})}function s(e=2e3){return t=>{let n;function r(){n&&clearTimeout(n),n=setTimeout(()=>{t.parent.classList.add("bespoke-marp-inactive"),t.fire("marp-inactive")},e),t.parent.classList.contains("bespoke-marp-inactive")&&(t.parent.classList.remove("bespoke-marp-inactive"),t.fire("marp-active"))}document.addEventListener("mousedown",r),document.addEventListener("mousemove",r),document.addEventListener("touchend",r),setTimeout(r,0)}}const i=["AUDIO","BUTTON","INPUT","SELECT","TEXTAREA","VIDEO"];function o(e){e.parent.addEventListener("keydown",e=>{if(!e.target)return;const t=e.target;(i.includes(t.nodeName)||"true"===t.contentEditable)&&e.stopPropagation()})}function l(e){window.addEventListener("load",()=>{for(const t of e.slides){const e=t.querySelector("[data-marp-fitting]")?"":"hideable";t.setAttribute("data-bespoke-marp-load",e)}})}var c;function d({interval:e=200}={}){return t=>{document.addEventListener("keydown",e=>{if(32===e.which&&e.shiftKey)t.prev();else if(33===e.which||37===e.which||38===e.which)t.prev({fragment:!e.shiftKey});else if(32!==e.which||e.shiftKey)if(34===e.which||39===e.which||40===e.which)t.next({fragment:!e.shiftKey});else if(35===e.which)t.slide(t.slides.length-1,{fragment:-1});else{if(36!==e.which)return;t.slide(0)}else t.next();e.preventDefault()});let n,r,a=0;t.parent.addEventListener("wheel",s=>{let i=!1;const o=(e,t)=>{e&&(i=i||function(e,t){return function(e,t){const n=t===c.X?"Width":"Height";return e["client"+n]<e["scroll"+n]}(e,t)&&function(e,t){const{overflow:n}=e,r=e["overflow"+t];return"auto"===n||"scroll"===n||"auto"===r||"scroll"===r}(getComputedStyle(e),t)}(e,t)),(null==e?void 0:e.parentElement)&&o(e.parentElement,t)};if(0!==s.deltaX&&o(s.target,c.X),0!==s.deltaY&&o(s.target,c.Y),i)return;s.preventDefault(),r&&clearTimeout(r),r=setTimeout(()=>{n=0},e);const l=Date.now()-a<e,d=Math.sqrt(Math.pow(s.deltaX,2)+Math.pow(s.deltaY,2)),u=d<=n;if(n=d,l||u)return;let f;(s.deltaX>0||s.deltaY>0)&&(f="next"),(s.deltaX<0||s.deltaY<0)&&(f="prev"),f&&(t[f](),a=Date.now())})}}!function(e){e.X="X",e.Y="Y"}(c||(c={}));const u=(...e)=>history.replaceState(...e);var f;!function(e){e.Normal="",e.Presenter="presenter",e.Next="next"}(f||(f={}));const m=(e,{protocol:t,host:n,pathname:r,hash:a}=location)=>{const s=e.toString();return`${t}//${n}${r}${s?"?":""}${s}${a}`},p=()=>{switch(document.body.getAttribute("data-bespoke-view")){case f.Normal:return f.Normal;case f.Presenter:return f.Presenter;case f.Next:return f.Next;default:throw new Error("View mode is not assigned.")}},h=e=>new URLSearchParams(location.search).get(e),g=(e,t={})=>{const n=Object.assign({location:location,setter:u},t),r=new URLSearchParams(n.location.search);for(const t of Object.keys(e)){const n=e[t];"string"==typeof n?r.set(t,n):r.delete(t)}try{n.setter(null,document.title,m(r,n.location))}catch(e){console.error(e)}},v={available:(()=>{try{return localStorage.setItem("bespoke-marp","bespoke-marp"),localStorage.removeItem("bespoke-marp"),!0}catch(e){return console.warn("Warning: Using localStorage is restricted in the current host so some features may not work."),!1}})(),get:e=>{try{return localStorage.getItem(e)}catch(e){return null}},set:(e,t)=>{try{return localStorage.setItem(e,t),!0}catch(e){return!1}},remove:e=>{try{return localStorage.removeItem(e),!0}catch(e){return!1}}};function b(e=".bespoke-marp-osc"){const t=document.querySelector(e);if(!t)return()=>{};const n=(e,n)=>{t.querySelectorAll(`[data-bespoke-marp-osc=${JSON.stringify(e)}]`).forEach(n)};return r.isEnabled||n("fullscreen",e=>e.style.display="none"),v.available||n("presenter",e=>{e.disabled=!0,e.title="Presenter view is disabled due to restricted localStorage."}),e=>{t.addEventListener("click",t=>{if(t.target instanceof HTMLElement){const{bespokeMarpOsc:n}=t.target.dataset;switch(n&&t.target.blur(),n){case"next":e.next({fragment:!t.shiftKey});break;case"prev":e.prev({fragment:!t.shiftKey});break;case"fullscreen":"function"==typeof e.fullscreen&&r.isEnabled&&e.fullscreen();break;case"presenter":e.openPresenterView()}}}),e.parent.appendChild(t),e.on("activate",({index:t})=>{n("page",n=>n.textContent=`Page ${t+1} of ${e.slides.length}`)}),e.on("fragment",({index:t,fragments:r,fragmentIndex:a})=>{n("prev",e=>e.disabled=0===t&&0===a),n("next",n=>n.disabled=t===e.slides.length-1&&a===r.length-1)}),e.on("marp-active",()=>t.removeAttribute("aria-hidden")),e.on("marp-inactive",()=>t.setAttribute("aria-hidden","true")),r.isEnabled&&r.onchange(()=>n("fullscreen",e=>e.classList.toggle("exit",r.isEnabled&&r.isFullscreen)))}}function w(){const e=Math.max(Math.floor(.85*window.innerWidth),640),t=Math.max(Math.floor(.85*window.innerHeight),360);return window.open(this.presenterUrl,"bespoke-marp-presenter-"+this.syncKey,`width=${e},height=${t},menubar=no,toolbar=no`)}function y(){const e=new URLSearchParams(location.search);return e.set("view","presenter"),e.set("sync",this.syncKey),m(e)}var x=["area","base","br","col","command","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"];let E=e=>String(e).replace(/[&<>"']/g,e=>`&${k[e]};`),k={"&":"amp","<":"lt",">":"gt",'"':"quot","'":"apos"},L="dangerouslySetInnerHTML",S={className:"class",htmlFor:"for"},I={};function P(e,t){let n=[],r="";t=t||{};for(let e=arguments.length;e-- >2;)n.push(arguments[e]);if("function"==typeof e)return t.children=n.reverse(),e(t);if(e){if(r+="<"+e,t)for(let e in t)!1!==t[e]&&null!=t[e]&&e!==L&&(r+=` ${S[e]?S[e]:E(e)}="${E(t[e])}"`);r+=">"}if(-1===x.indexOf(e)){if(t[L])r+=t[L].__html;else for(;n.length;){let e=n.pop();if(e)if(e.pop)for(let t=e.length;t--;)n.push(e[t]);else r+=!0===I[e]?e:E(e)}r+=e?`</${e}>`:""}return I[r]=!0,r}const M=({children:e})=>P(null,null,...e),N="bespoke-marp-presenter-container",F="bespoke-marp-presenter-next",O="bespoke-marp-presenter-next-container",q="bespoke-marp-presenter-note-container",C="bespoke-marp-presenter-info-container",T="bespoke-marp-presenter-info-page",A="bespoke-marp-presenter-info-page-text",K="bespoke-marp-presenter-info-page-prev",$="bespoke-marp-presenter-info-page-next",j="bespoke-marp-presenter-info-time",D="bespoke-marp-presenter-info-timer";function R(e){const{title:t}=document;document.title="[Presenter view]"+(t?" - "+t:"");const n={},r=e=>(n[e]=n[e]||document.querySelector("."+e),n[e]);document.body.appendChild((e=>{const t=document.createElement("div");return t.className=N,t.appendChild(e),t.insertAdjacentHTML("beforeend",P(M,null,P("div",{class:O},P("iframe",{class:F,src:"?view=next"})),P("div",{class:q}),P("div",{class:C},P("div",{class:T},P("button",{class:K,tabindex:"-1",title:"Previous"},"Previous"),P("span",{class:A}),P("button",{class:$,tabindex:"-1",title:"Next"},"Next")),P("time",{class:j,title:"Current time"}),P("div",{class:D})))),t})(e.parent)),(e=>{r(O).addEventListener("click",()=>e.next());const t=r(F),n=(a=t,(e,t)=>{var n;return null===(n=a.contentWindow)||void 0===n?void 0:n.postMessage(`navigate:${e},${t}`,"null"===window.origin?"*":window.origin)});var a;t.addEventListener("load",()=>{r(O).classList.add("active"),n(e.slide(),e.fragmentIndex),e.on("fragment",({index:e,fragmentIndex:t})=>n(e,t))});const s=document.querySelectorAll(".bespoke-marp-note");s.forEach(e=>{e.addEventListener("keydown",e=>e.stopPropagation()),r(q).appendChild(e)}),e.on("activate",()=>s.forEach(t=>t.classList.toggle("active",t.dataset.index==e.slide()))),e.on("activate",({index:t})=>{r(A).textContent=`${t+1} / ${e.slides.length}`});const i=r(K),o=r($);i.addEventListener("click",t=>{i.blur(),e.prev({fragment:!t.shiftKey})}),o.addEventListener("click",t=>{o.blur(),e.next({fragment:!t.shiftKey})}),e.on("fragment",({index:t,fragments:n,fragmentIndex:r})=>{i.disabled=0===t&&0===r,o.disabled=t===e.slides.length-1&&r===n.length-1});const l=()=>r(j).textContent=(new Date).toLocaleTimeString();l(),setInterval(l,250)})(e)}function U(e){const t=p();return t===f.Next&&e.appendChild(document.createElement("span")),e=>{t===f.Normal&&function(e){if(!(e=>e.syncKey&&"string"==typeof e.syncKey)(e))throw new Error("The current instance of Bespoke.js is invalid for Marp bespoke presenter plugin.");Object.defineProperties(e,{openPresenterView:{enumerable:!0,value:w},presenterUrl:{enumerable:!0,get:y}}),v.available&&document.addEventListener("keydown",t=>{80!==t.which||t.altKey||t.ctrlKey||t.metaKey||(t.preventDefault(),e.openPresenterView())})}(e),t===f.Presenter&&R(e),t===f.Next&&function(e){const t=t=>{if(t.origin!==window.origin)return;const[n,r]=t.data.split(":");if("navigate"===n){const[t,n]=r.split(",");let a=Number.parseInt(t,10),s=Number.parseInt(n,10)+1;s>=e.fragments[a].length&&(a+=1,s=0),e.slide(a,{fragment:s})}};window.addEventListener("message",t),e.on("destroy",()=>window.removeEventListener("message",t))}(e)}}function V(e){e.on("activate",t=>{document.querySelectorAll(".bespoke-progress-bar").forEach(n=>{n.style.flexBasis=100*t.index/(e.slides.length-1)+"%"})})}const X=e=>{const t=Number.parseInt(e,10);return Number.isNaN(t)?null:t};function Y(e={}){const t=Object.assign({history:!0},e);return e=>{let n=!0;const r=e=>{const t=n;try{return n=!0,e()}finally{n=t}},a=(t={fragment:!0})=>{((t,n)=>{const{fragments:r,slides:a}=e,s=Math.max(0,Math.min(t,a.length-1)),i=Math.max(0,Math.min(n||0,r[s].length-1));s===e.slide()&&i===e.fragmentIndex||e.slide(s,{fragment:i})})((X(location.hash.slice(1))||1)-1,t.fragment?X(h("f")||""):null)};e.on("fragment",({index:e,fragmentIndex:r})=>{n||g({f:0===r||r.toString()},{location:Object.assign(Object.assign({},location),{hash:"#"+(e+1)}),setter:(...e)=>t.history?history.pushState(...e):history.replaceState(...e)})}),setTimeout(()=>{a(),window.addEventListener("hashchange",()=>r(()=>{a({fragment:!1}),g({f:void 0})})),window.addEventListener("popstate",()=>{n||r(()=>a())}),n=!1},0)}}function B(e={}){const t=e.key||((e=21)=>{let t="",n=crypto.getRandomValues(new Uint8Array(e));for(;e--;){let r=63&n[e];t+=r<36?r.toString(36):r<62?(r-26).toString(36).toUpperCase():r<63?"_":"-"}return t})(),n="bespoke-marp-sync-"+t,r=()=>{const e=v.get(n);return e?JSON.parse(e):Object.create(null)},a=e=>{const t=r(),a=Object.assign(Object.assign({},t),e(t));return v.set(n,JSON.stringify(a)),a};return a(e=>({reference:(e.reference||0)+1})),e=>{Object.defineProperty(e,"syncKey",{value:t,enumerable:!0});let s=!0;setTimeout(()=>{e.on("fragment",e=>{s&&a(()=>({index:e.index,fragmentIndex:e.fragmentIndex}))})},0),window.addEventListener("storage",t=>{if(t.key===n&&t.oldValue&&t.newValue){const n=JSON.parse(t.oldValue),r=JSON.parse(t.newValue);if(n.index!==r.index||n.fragmentIndex!==r.fragmentIndex)try{s=!1,e.slide(r.index,{fragment:r.fragmentIndex})}finally{s=!0}}}),e.on("destroy",()=>{const{reference:e}=r();void 0===e||e<=1?v.remove(n):a(()=>({reference:e-1}))})}}function z({slope:e=Math.tan(-35*Math.PI/180),swipeThreshold:t=30}={}){return n=>{let r;const a=n.parent,s=e=>{const t=a.getBoundingClientRect();return{x:e.pageX-(t.left+t.right)/2,y:e.pageY-(t.top+t.bottom)/2}};a.addEventListener("touchstart",e=>{r=1===e.touches.length?s(e.touches[0]):void 0},{passive:!0}),a.addEventListener("touchmove",e=>{if(r)if(1===e.touches.length){e.preventDefault();const t=s(e.touches[0]),n=t.x-r.x,a=t.y-r.y;r.delta=Math.sqrt(Math.pow(Math.abs(n),2)+Math.pow(Math.abs(a),2)),r.radian=Math.atan2(n,a)}else r=void 0}),a.addEventListener("touchend",a=>{if(r){if(r.delta&&r.delta>=t&&r.radian){let t=r.radian-e;t=(t+Math.PI)%(2*Math.PI)-Math.PI,n[t<0?"next":"prev"](),a.stopPropagation()}r=void 0}},{passive:!0})}}
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */function H(e,t,n,r){return new(n||(n=Promise))((function(a,s){function i(e){try{l(r.next(e))}catch(e){s(e)}}function o(e){try{l(r.throw(e))}catch(e){s(e)}}function l(e){var t;e.done?a(e.value):(t=e.value,t instanceof n?t:new n((function(e){e(t)}))).then(i,o)}l((r=r.apply(e,t||[])).next())}))}let W=void 0;const J=()=>(void 0===W&&(W="wakeLock"in navigator&&navigator.wakeLock),W),_=()=>H(void 0,void 0,void 0,(function*(){const e=J();if(e)try{const t=yield e.request("screen");return t.addEventListener("release",()=>{console.debug("[Marp CLI] Wake Lock was released")}),console.debug("[Marp CLI] Wake Lock is active"),t}catch(e){console.warn(e)}return null}));function G(){return H(this,void 0,void 0,(function*(){if(!J())return;let e;const t=()=>{e&&"visible"===document.visibilityState&&_()};return document.addEventListener("visibilitychange",t),document.addEventListener("fullscreenchange",t),e=yield _(),e}))}const Q=[f.Normal,f.Presenter,f.Next];!function(r=document.getElementById("p")){document.body.setAttribute("data-bespoke-view",(()=>{switch(h("view")){case"next":return f.Next;case"presenter":return f.Presenter;default:return f.Normal}})());const i=(e=>{const t=h(e);return g({[e]:void 0}),t})("sync")||void 0,c=!1,u=!0,m=e(r,((...e)=>{const t=Q.findIndex(e=>p()===e);if(t<0)throw new Error("Invalid view");return e.map(([e,n])=>e[t]&&n).filter(e=>e)})([[u,u,c],B({key:i})],[[u,u,u],U(r)],[[u,u,c],o],[[u,u,u],t],[[u,c,c],s()],[[u,u,u],l],[[u,u,u],Y({history:!1})],[[u,u,c],d()],[[u,u,c],a],[[u,c,c],V],[[u,u,c],z()],[[u,c,c],b()],[[u,u,u],n],[[u,u,c],G]));window.addEventListener("beforeunload",()=>g({sync:m.syncKey})),window.addEventListener("unload",()=>m.destroy())}()}();</script></body></html>
